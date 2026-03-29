@@ -1,0 +1,569 @@
+[
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "syfte",
+    "year": null,
+    "heading": "Syfte",
+    "text": "Undervisningen i ämnet matematik ska syfta till att eleverna utvecklar kun­ska­per om matematik och matematikens användning i vardagen och inom oli­ka ämnesområden. Undervisningen ska bidra till att eleverna utvecklar in­tresse för matematik och tilltro till sin förmåga att använda matematik i olika sam­manhang. Den ska också ge eleverna möjlighet att uppleva estetiska vär­den i möten med matematiska mönster, former och samband. Genom undervisningen ska eleverna ges förutsättningar att utveckla för­tro­gen­het med grundläggande matematiska begrepp och metoder och deras an­vänd­barhet. Vidare ska eleverna genom undervisningen ges möjligheter att ut­veckla kunskaper i att använda digitala verktyg och programmering för att kunna undersöka problemställningar och matematiska begrepp, göra beräk­ningar samt för att presentera och tolka data. Undervisningen ska bidra till att eleverna utvecklar kunskaper för att kunna for­mu­lera och lösa problem samt reflektera över och värdera valda strategier, mo­deller och resultat. Eleverna ska även ges förutsättningar att utveckla kun­ska­per för att kunna tolka vardagliga och matematiska situationer samt för att kunna beskriva och formulera dessa med hjälp av matematikens uttrycks­former. Undervisningen ska bidra till att eleverna utvecklar förmågan att argu­mentera logiskt och föra matematiska resonemang. Eleverna ska genom under­visningen också ges möjlighet att utveckla en förtrogenhet med mate­mati­kens uttrycksformer och hur dessa kan användas för att kommunicera om mate­matik i vardagliga och matematiska sammanhang. Undervisningen ska ge eleverna förutsättningar att utveckla kunskaper om histo­riska sammanhang där viktiga begrepp och metoder i matematiken har ut­vecklats. Genom undervisningen ska eleverna även ges möjligheter att re­flek­tera över matematikens betydelse, användning och begränsning i var­dags­livet, i andra skolämnen och under historiska skeenden och därigenom kunna se matematikens sammanhang och relevans. Undervisningen i ämnet matematik ska ge eleverna förutsättningar att ut­veckla förmåga att använda och beskriva matematiska begrepp och samband mellan begrepp, förmåga att välja och använda lämpliga matematiska metoder för att göra beräkningar och lösa rutinuppgifter, förmåga att formulera och lösa problem med hjälp av matematik och värdera valda strategier, förmåga att föra och följa matematiska resonemang, och förmåga att använda matematikens uttrycksformer för att samtala om och redogöra för frågeställningar, beräkningar och slutsatser."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "1-3",
+    "subheading": "Taluppfattning och tals användning",
+    "heading": "Taluppfattning och tals användning (1-3)",
+    "text": "Naturliga tal och deras egenskaper samt hur talen delas upp och an­vän­ds för att ange antal och ordning. Positionssystemet och hur det används för att beskriva naturliga tal. Symboler för tal och symbolernas utveckling i några olika kulturer genom historien. Tal i bråkform som del av helhet och del av antal samt hur delarna benämns och uttrycks som enkla bråk. Hur enkla bråk förhåller sig till naturliga tal. Hur naturliga tal och enkla tal i bråkform används i elevnära situa­tio­ner. De fyra räknesättens egenskaper och samband samt användning i olika situationer. Metoder för beräkningar med naturliga tal, vid huvudräkning, över­slags­räkning och skriftlig beräkning. Användning av digitala verktyg vid be­räk­ningar. Rimlighetsbedömning vid uppskattningar och beräkningar."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "1-3",
+    "subheading": "Algebra",
+    "heading": "Algebra (1-3)",
+    "text": "Matematiska likheter och likhetstecknets betydelse. Obekanta tal och hur de kan betecknas med en symbol. Enkla mönster i talföljder och enkla geometriska mönster samt hur de konstrueras, beskrivs och uttrycks. Entydiga stegvisa instruktioner och hur de konstrueras, beskrivs och följs som grund för programmering. Hur symboler används vid stegvisa in­struk­tioner."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "1-3",
+    "subheading": "Geometri",
+    "heading": "Geometri (1-3)",
+    "text": "Vanliga lägesord för att beskriva föremåls och objekts läge i rummet. Grundläggande geometriska tvådimensionella objekt samt objekten klot, kon, cylinder och rätblock. Egenskaper hos dessa objekt och deras inbördes relationer. Konstruktion av geometriska objekt. Jämförelser och uppskattningar av storheter. Mätning av längd, massa, volym och tid med vanliga nutida och äldre måttenheter. Skala vid enkel förminskning och förstoring. Symmetri i vardagen och hur symmetri kan konstrueras."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "1-3",
+    "subheading": "Sannolikhet och statistik",
+    "heading": "Sannolikhet och statistik (1-3)",
+    "text": "Slumpmässiga händelser i konkreta situationer. Enkla tabeller och diagram och hur de används för att sortera data och beskriva resultat från undersökningar, såväl med som utan digitala verktyg."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "1-3",
+    "subheading": "Samband och förändring",
+    "heading": "Samband och förändring (1-3)",
+    "text": "Proportionella samband, däribland dubbelt och hälften."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "1-3",
+    "subheading": "Problemlösning",
+    "heading": "Problemlösning (1-3)",
+    "text": "Strategier för att lösa matematiska problem i elevnära situationer. Formulering av matematiska frågeställningar utifrån vardagliga situationer."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "4-6",
+    "subheading": "Taluppfattning och tals användning",
+    "heading": "Taluppfattning och tals användning (4-6)",
+    "text": "Rationella tal, däribland negativa tal, och deras egenskaper samt hur talen kan delas upp och användas. Positionssystemet och hur det används för att beskriva hela tal och tal i decimalform. Olika talsystem och några talsystem som använts i olika kulturer genom hi­storien. Tal i procentform och deras samband med tal i bråk- och decimalform. Hur tal i bråk- och decimalform kan användas i vardagliga situationer. De fyra räknesätten och regler för deras användning vid beräkningar med naturliga tal. Metoder för beräkningar med naturliga tal och enkla tal i bråk- och deci­malform vid överslagsräkning, huvudräkning och skriftlig beräkning. An­vändning av digitala verktyg vid beräkningar. Rimlighetsbedömning vid uppskattningar och beräkningar."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "4-6",
+    "subheading": "Algebra",
+    "heading": "Algebra (4-6)",
+    "text": "Matematiska likheter och hur likhetstecknet används för att teckna enk­la ekvationer. Variabler och deras användning i enkla algebraiska uttryck och ekvationer. Metoder, däribland algebraiska, för att lösa enkla ekvationer. Mönster i talföljder och geometriska mönster samt hur de konstrueras, be­skrivs och uttrycks. Programmering i visuella programmeringsmiljöer. Hur algoritmer ska­pas och används vid programmering."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "4-6",
+    "subheading": "Geometri",
+    "heading": "Geometri (4-6)",
+    "text": "Grundläggande geometriska två- och tredimensionella objekt samt deras egen­skaper och inbördes relationer. Konstruktion av geometriska objekt, såväl med som utan digitala verktyg. Jämförelse, uppskattning och mätning av längd, area, massa, volym, tid och vin­kel med standardiserade måttenheter samt enhetsbyten i samband med detta. Metoder för hur omkrets och area hos olika tvådimensionella geometriska fi­gurer kan bestämmas och uppskattas. Skala vid förminskning och förstoring samt användning av skala i elevnära situa­tioner. Symmetri i planet och hur symmetri kan konstrueras."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "4-6",
+    "subheading": "Sannolikhet och statistik",
+    "heading": "Sannolikhet och statistik (4-6)",
+    "text": "Slumpmässiga händelser, chans och risk med utgångspunkt i ob­ser­va­tio­ner, simuleringar och statistiskt material. Jämförelse av sannolikhet vid oli­ka slumpmässiga försök. Enkel kombinatorik i konkreta situationer. Tabeller och diagram för att beskriva resultat från undersökningar, såväl med som utan digitala verktyg. Tolkning av data i tabeller och diagram. Lägesmåtten medelvärde, typvärde och median samt hur de används i statistiska undersökningar."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "4-6",
+    "subheading": "Samband och förändring",
+    "heading": "Samband och förändring (4-6)",
+    "text": "Proportionalitet samt hur proportionella samband uttrycks i bråk-, decimal- och procentform. Koordinatsystem och gradering av koordinataxlar. Grafer för att uttrycka proportionella samband."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "4-6",
+    "subheading": "Problemlösning",
+    "heading": "Problemlösning (4-6)",
+    "text": "Strategier för att lösa matematiska problem i elevnära situationer. Formulering av matematiska frågeställningar utifrån vardagliga situatio­ner."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "7-9",
+    "subheading": "Taluppfattning och tals användning",
+    "heading": "Taluppfattning och tals användning (7-9)",
+    "text": "Reella tal och deras egenskaper samt talens användning i matematiska situa­tio­ner. Talsystemets utveckling från naturliga tal till reella tal. Tal i potensform. Grundpotensform för att uttrycka små och stora tal samt an­vändning av prefix. Matematiska lagar och regler samt deras användning vid beräkningar med tal i bråk-, decimal- och potensform. Metoder för beräkningar med tal i bråk- och decimalform vid över­slags­räkning, huvudräkning och skriftlig beräkning. Användning av di­gitala verk­tyg vid beräkningar. Rimlighetsbedömning vid uppskattningar och beräkningar."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "7-9",
+    "subheading": "Algebra",
+    "heading": "Algebra (7-9)",
+    "text": "Matematiska likheter samt hur likhetstecknet används för att teckna ekvationer och funktioner. Variablers användning i algebraiska uttryck, formler, ekvationer och funk­tioner. Metoder för att lösa linjära ekvationer och enkla andragradsekvationer. Mönster i talföljder och geometriska mönster samt hur de konstrueras, be­sk­rivs och uttrycks generellt. Programmering i visuell och textbaserad programmeringsmiljö. Hur algo­rit­mer skapas, testas och förbättras vid programmering."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "7-9",
+    "subheading": "Geometri",
+    "heading": "Geometri (7-9)",
+    "text": "Geometriska objekt samt deras egenskaper och inbördes relationer. Kon­struk­tion av geometriska objekt, såväl med som utan digitala verktyg. Metoder för beräkning av area, omkrets och volym hos geometriska objekt, samt enhetsbyten i samband med detta. Geometriska satser och formler samt argumentation för deras giltighet. Skala vid förminskning och förstoring av två- och tredimensionella objekt. Likformighet och kongruens."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "7-9",
+    "subheading": "Sannolikhet och statistik",
+    "heading": "Sannolikhet och statistik (7-9)",
+    "text": "Sannolikhet och metoder för att beräkna sannolikhet i olika situationer. Be­döm­ningar av risker och chanser utifrån datorsimuleringar och statistiskt ma­terial. Kombinatoriska principer och hur de kan användas i olika situationer. Tabeller, diagram och grafer samt hur de tolkas och används för att be­skriva resultat av egna och andras undersökningar, såväl med som utan di­gitala verktyg. Lägesmått och spridningsmått samt hur de används för bedömning av re­sultat vid statistiska undersökningar."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "7-9",
+    "subheading": "Samband och förändring",
+    "heading": "Samband och förändring (7-9)",
+    "text": "Proportionalitet och hur det används för att uttrycka skala, lik­for­mig­het och förändring. Härledda enheter, till exempel km/h och kr/kg. Procent och förändringsfaktor för att uttrycka förändring samt beräkningar med procent i vardagliga situationer och inom olika ämnesområden. Räta linjens ekvation och förändringstakt. Användning av räta lin­jens ekvation för att beskriva samband. Funktioner och hur de används för att beskriva samband och förändring samt undersöka förändringstakt. Hur funk­tio­ner uttrycks i form av grafer, tabeller och funktionsuttryck."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "7-9",
+    "subheading": "Problemlösning",
+    "heading": "Problemlösning (7-9)",
+    "text": "Strategier för att lösa matematiska problem i olika situationer och inom oli­ka ämnesområden samt värdering av valda strategier och metoder. Formulering av matematiska frågeställningar utifrån olika situationer och äm­nesområden. Enkla matematiska modeller och hur de kan användas i olika situationer."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "3",
+    "heading": "Kunskapskrav 3",
+    "text": "Kriterier för bedömning av godtagbara kunskaper i slutet av årskurs 3 Eleven visar grundläggande kunskaper om matematiska begrepp och använder dem med tillfredsställande säkerhet. Eleven ger även exempel på hur några begrepp relaterar till varandra. Eleven visar grundläggande kunskaper om naturliga tal och beskriver tals inbördes relation samt delar upp tal. Eleven visar grundläggande kunskaper om tal i bråkform och delar upp helheter i delar samt jämför och namnger delarna som enkla bråk. Eleven använder och beskriver geometriska mönster och mönster i talföljder. Dessutom använder eleven grundläggande geometriska begrepp och vanliga lägesord för att beskriva geometriska objekts egenskaper, läge och inbördes relationer. Eleven använder och ger exempel på enkla proportionella samband. Eleven väljer och använder i huvudsak fungerande matematiska metoder för att göra enkla beräkningar med naturliga tal och lösa enkla rutinuppgifter med tillfredsställande säkerhet. Eleven använder huvudräkning för att genomföra beräkningar med de fyra räknesätten. Vid addition och subtraktion väljer och använder eleven skriftliga räknemetoder med tillfredsställande säkerhet. Eleven hanterar enkla matematiska likheter och använder då likhetstecknet på ett fungerande sätt. Eleven avbildar och, utifrån instruktioner, konstruerar enkla geometriska objekt. Eleven gör enkla mätningar, jämförelser och uppskattningar av längder, massor, volymer och tider och använder vanliga måttenheter. Vid olika undersökningar avläser och skapar eleven enkla tabeller och diagram för att sortera och redovisa resultat. Eleven löser enkla problem genom att välja och använda någon strategi med viss anpassning till problemets karaktär. Eleven beskriver tillvägagångssätt och ger enkla omdömen om resultatens rimlighet. Eleven för och följer matematiska resonemang genom att ställa och besvara frågor som i huvudsak hör till ämnet. Eleven beskriver och samtalar om tillvägagångssätt på ett i huvudsak fungerande sätt och använder då konkret material, bilder, symboler och andra matematiska uttrycksformer."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "6",
+    "heading": "Kunskapskrav 6",
+    "text": "Betygskriterier för betyget E i slutet av årskurs 6 Eleven visar grundläggande kunskaper om matematiska begrepp samt använder och beskriver begrepp och samband mellan begrepp inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med tillfredsställande säkerhet. Eleven väljer och använder i huvudsak fungerande matematiska metoder för att göra beräkningar och lösa rutinuppgifter inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med tillfredsställande säkerhet. Eleven löser enkla problem. Eleven bidrar till något förslag på alternativt tillvägagångssätt och värderar resultatens rimlighet. Eleven för och följer matematiska resonemang genom att framföra och bemöta påståenden med enkla matematiska argument. Eleven redogör för och samtalar om tillvägagångssätt på ett i huvudsak fungerande sätt och använder då symboler och andra matematiska uttrycksformer."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "6",
+    "heading": "Kunskapskrav 6",
+    "text": "Betygskriterier för betyget D i slutet av årskurs 6 Elevens kunskaper bedöms sammantaget vara mellan C och E."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "6",
+    "heading": "Kunskapskrav 6",
+    "text": "Betygskriterier för betyget C i slutet av årskurs 6 Eleven visar goda kunskaper om matematiska begrepp samt använder och beskriver begrepp och samband mellan begrepp inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med god säkerhet. Eleven väljer och använder ändamålsenliga matematiska metoder för att göra beräkningar och lösa rutinuppgifter inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med god säkerhet. Eleven löser relativt komplexa problem. Eleven ger något förslag på alternativt tillvägagångssätt och värderar resultatens rimlighet. Eleven för och följer matematiska resonemang genom att framföra och bemöta påståenden med relativt väl underbyggda matematiska argument. Eleven redogör för och samtalar om tillvägagångssätt på ett ändamålsenligt sätt och använder då symboler och andra matematiska uttrycksformer."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "6",
+    "heading": "Kunskapskrav 6",
+    "text": "Betygskriterier för betyget B i slutet av årskurs 6 Elevens kunskaper bedöms sammantaget vara mellan A och C."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "6",
+    "heading": "Kunskapskrav 6",
+    "text": "Betygskriterier för betyget A i slutet av årskurs 6 Eleven visar mycket goda kunskaper om matematiska begrepp samt använder och beskriver begrepp och samband mellan begrepp inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med mycket god säkerhet. Eleven väljer och använder ändamålsenliga och effektiva matematiska metoder för att göra beräkningar och lösa rutinuppgifter inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med mycket god säkerhet. Eleven löser komplexa problem. Eleven ger förslag på alternativa tillvägagångssätt och värderar resultatens rimlighet. Eleven för och följer matematiska resonemang genom att framföra och bemöta påståenden med väl underbyggda matematiska argument. Eleven redogör för och samtalar om tillvägagångssätt på ett ändamålsenligt och effektivt sätt och använder då symboler och andra matematiska uttrycksformer."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "9",
+    "heading": "Kunskapskrav 9",
+    "text": "Betygskriterier för betyget E i slutet av årskurs 9 Eleven visar grundläggande kunskaper om matematiska begrepp samt använder och beskriver begrepp och samband mellan begrepp inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med tillfredsställande säkerhet. Eleven väljer och använder i huvudsak fungerande matematiska metoder för att göra beräkningar och lösa rutinuppgifter inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med tillfredsställande säkerhet. Eleven löser enkla problem. Eleven bidrar till något förslag på alternativt tillvägagångssätt. I samband med problemlösning bidrar eleven till att formulera enkla matematiska modeller som kan tillämpas i sammanhanget. Eleven värderar strategier och resultatens rimlighet på ett enkelt sätt. Eleven för och följer matematiska resonemang genom att framföra och bemöta påståenden med enkla matematiska argument. Eleven redogör för och samtalar om tillvägagångssätt på ett i huvudsak fungerande sätt och använder då symboler och andra matematiska uttrycksformer."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "9",
+    "heading": "Kunskapskrav 9",
+    "text": "Betygskriterier för betyget D i slutet av årskurs 9 Elevens kunskaper bedöms sammantaget vara mellan C och E."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "9",
+    "heading": "Kunskapskrav 9",
+    "text": "Betygskriterier för betyget C i slutet av årskurs 9 Eleven visar goda kunskaper om matematiska begrepp samt använder och beskriver begrepp och samband mellan begrepp inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med god säkerhet. Eleven väljer och använder ändamålsenliga matematiska metoder för att göra beräkningar och lösa rutinuppgifter inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med god säkerhet. Eleven löser relativt komplexa problem. Eleven ger något förslag på alternativt tillvägagångssätt. I samband med problemlösning formulerar eleven enkla matematiska modeller som efter någon bearbetning kan tillämpas i sammanhanget. Eleven värderar strategier och resultatens rimlighet på ett utvecklat sätt. Eleven för och följer matematiska resonemang genom att framföra och bemöta påståenden med relativt väl underbyggda matematiska argument. Eleven redogör för och samtalar om tillvägagångssätt på ett ändamålsenligt sätt och använder då symboler och andra matematiska uttrycksformer."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "9",
+    "heading": "Kunskapskrav 9",
+    "text": "Betygskriterier för betyget B i slutet av årskurs 9 Elevens kunskaper bedöms sammantaget vara mellan A och C."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "9",
+    "heading": "Kunskapskrav 9",
+    "text": "Betygskriterier för betyget A i slutet av årskurs 9 Eleven visar mycket goda kunskaper om matematiska begrepp samt använder och beskriver begrepp och samband mellan begrepp inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med mycket god säkerhet. Eleven väljer och använder ändamålsenliga och effektiva matematiska metoder för att göra beräkningar och lösa rutinuppgifter inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med mycket god säkerhet. Eleven löser komplexa problem. Eleven ger förslag på alternativa tillvägagångssätt. I samband med problemlösning formulerar eleven enkla matematiska modeller som kan tillämpas i sammanhanget. Eleven värderar strategier och resultatens rimlighet på ett välutvecklat sätt. Eleven för och följer matematiska resonemang genom att framföra och bemöta påståenden med väl underbyggda matematiska argument. Eleven redogör för och samtalar om tillvägagångssätt på ett ändamålsenligt och effektivt sätt och använder då symboler och andra matematiska uttrycksformer."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "1-3",
+    "subheading": "Taluppfattning och tals användning",
+    "heading": "Taluppfattning och tals användning (1-3)",
+    "text": "Naturliga tal och deras egenskaper samt hur talen delas upp och an­vän­ds för att ange antal och ordning. Positionssystemet och hur det används för att beskriva naturliga tal. Symboler för tal och symbolernas utveckling i några olika kulturer genom historien. Tal i bråkform som del av helhet och del av antal samt hur delarna benämns och uttrycks som enkla bråk. Hur enkla bråk förhåller sig till naturliga tal. Hur naturliga tal och enkla tal i bråkform används i elevnära situa­tio­ner. De fyra räknesättens egenskaper och samband samt användning i olika situationer. Metoder för beräkningar med naturliga tal, vid huvudräkning, över­slags­räkning och skriftlig beräkning. Användning av digitala verktyg vid be­räk­ningar. Rimlighetsbedömning vid uppskattningar och beräkningar."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "1-3",
+    "subheading": "Algebra",
+    "heading": "Algebra (1-3)",
+    "text": "Matematiska likheter och likhetstecknets betydelse. Obekanta tal och hur de kan betecknas med en symbol. Enkla mönster i talföljder och enkla geometriska mönster samt hur de konstrueras, beskrivs och uttrycks. Entydiga stegvisa instruktioner och hur de konstrueras, beskrivs och följs som grund för programmering. Hur symboler används vid stegvisa in­struk­tioner."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "1-3",
+    "subheading": "Geometri",
+    "heading": "Geometri (1-3)",
+    "text": "Vanliga lägesord för att beskriva föremåls och objekts läge i rummet. Grundläggande geometriska tvådimensionella objekt samt objekten klot, kon, cylinder och rätblock. Egenskaper hos dessa objekt och deras inbördes relationer. Konstruktion av geometriska objekt. Jämförelser och uppskattningar av storheter. Mätning av längd, massa, volym och tid med vanliga nutida och äldre måttenheter. Skala vid enkel förminskning och förstoring. Symmetri i vardagen och hur symmetri kan konstrueras."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "1-3",
+    "subheading": "Sannolikhet och statistik",
+    "heading": "Sannolikhet och statistik (1-3)",
+    "text": "Slumpmässiga händelser i konkreta situationer. Enkla tabeller och diagram och hur de används för att sortera data och beskriva resultat från undersökningar, såväl med som utan digitala verktyg."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "1-3",
+    "subheading": "Samband och förändring",
+    "heading": "Samband och förändring (1-3)",
+    "text": "Proportionella samband, däribland dubbelt och hälften."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "1-3",
+    "subheading": "Problemlösning",
+    "heading": "Problemlösning (1-3)",
+    "text": "Strategier för att lösa matematiska problem i elevnära situationer. Formulering av matematiska frågeställningar utifrån vardagliga situationer."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "4-6",
+    "subheading": "Taluppfattning och tals användning",
+    "heading": "Taluppfattning och tals användning (4-6)",
+    "text": "Rationella tal, däribland negativa tal, och deras egenskaper samt hur talen kan delas upp och användas. Positionssystemet och hur det används för att beskriva hela tal och tal i decimalform. Olika talsystem och några talsystem som använts i olika kulturer genom hi­storien. Tal i procentform och deras samband med tal i bråk- och decimalform. Hur tal i bråk- och decimalform kan användas i vardagliga situationer. De fyra räknesätten och regler för deras användning vid beräkningar med naturliga tal. Metoder för beräkningar med naturliga tal och enkla tal i bråk- och deci­malform vid överslagsräkning, huvudräkning och skriftlig beräkning. An­vändning av digitala verktyg vid beräkningar. Rimlighetsbedömning vid uppskattningar och beräkningar."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "4-6",
+    "subheading": "Algebra",
+    "heading": "Algebra (4-6)",
+    "text": "Matematiska likheter och hur likhetstecknet används för att teckna enk­la ekvationer. Variabler och deras användning i enkla algebraiska uttryck och ekvationer. Metoder, däribland algebraiska, för att lösa enkla ekvationer. Mönster i talföljder och geometriska mönster samt hur de konstrueras, be­skrivs och uttrycks. Programmering i visuella programmeringsmiljöer. Hur algoritmer ska­pas och används vid programmering."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "4-6",
+    "subheading": "Geometri",
+    "heading": "Geometri (4-6)",
+    "text": "Grundläggande geometriska två- och tredimensionella objekt samt deras egen­skaper och inbördes relationer. Konstruktion av geometriska objekt, såväl med som utan digitala verktyg. Jämförelse, uppskattning och mätning av längd, area, massa, volym, tid och vin­kel med standardiserade måttenheter samt enhetsbyten i samband med detta. Metoder för hur omkrets och area hos olika tvådimensionella geometriska fi­gurer kan bestämmas och uppskattas. Skala vid förminskning och förstoring samt användning av skala i elevnära situa­tioner. Symmetri i planet och hur symmetri kan konstrueras."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "4-6",
+    "subheading": "Sannolikhet och statistik",
+    "heading": "Sannolikhet och statistik (4-6)",
+    "text": "Slumpmässiga händelser, chans och risk med utgångspunkt i ob­ser­va­tio­ner, simuleringar och statistiskt material. Jämförelse av sannolikhet vid oli­ka slumpmässiga försök. Enkel kombinatorik i konkreta situationer. Tabeller och diagram för att beskriva resultat från undersökningar, såväl med som utan digitala verktyg. Tolkning av data i tabeller och diagram. Lägesmåtten medelvärde, typvärde och median samt hur de används i statistiska undersökningar."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "4-6",
+    "subheading": "Samband och förändring",
+    "heading": "Samband och förändring (4-6)",
+    "text": "Proportionalitet samt hur proportionella samband uttrycks i bråk-, decimal- och procentform. Koordinatsystem och gradering av koordinataxlar. Grafer för att uttrycka proportionella samband."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "4-6",
+    "subheading": "Problemlösning",
+    "heading": "Problemlösning (4-6)",
+    "text": "Strategier för att lösa matematiska problem i elevnära situationer. Formulering av matematiska frågeställningar utifrån vardagliga situatio­ner."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "7-9",
+    "subheading": "Taluppfattning och tals användning",
+    "heading": "Taluppfattning och tals användning (7-9)",
+    "text": "Reella tal och deras egenskaper samt talens användning i matematiska situa­tio­ner. Talsystemets utveckling från naturliga tal till reella tal. Tal i potensform. Grundpotensform för att uttrycka små och stora tal samt an­vändning av prefix. Matematiska lagar och regler samt deras användning vid beräkningar med tal i bråk-, decimal- och potensform. Metoder för beräkningar med tal i bråk- och decimalform vid över­slags­räkning, huvudräkning och skriftlig beräkning. Användning av di­gitala verk­tyg vid beräkningar. Rimlighetsbedömning vid uppskattningar och beräkningar."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "7-9",
+    "subheading": "Algebra",
+    "heading": "Algebra (7-9)",
+    "text": "Matematiska likheter samt hur likhetstecknet används för att teckna ekvationer och funktioner. Variablers användning i algebraiska uttryck, formler, ekvationer och funk­tioner. Metoder för att lösa linjära ekvationer och enkla andragradsekvationer. Mönster i talföljder och geometriska mönster samt hur de konstrueras, be­sk­rivs och uttrycks generellt. Programmering i visuell och textbaserad programmeringsmiljö. Hur algo­rit­mer skapas, testas och förbättras vid programmering."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "7-9",
+    "subheading": "Geometri",
+    "heading": "Geometri (7-9)",
+    "text": "Geometriska objekt samt deras egenskaper och inbördes relationer. Kon­struk­tion av geometriska objekt, såväl med som utan digitala verktyg. Metoder för beräkning av area, omkrets och volym hos geometriska objekt, samt enhetsbyten i samband med detta. Geometriska satser och formler samt argumentation för deras giltighet. Skala vid förminskning och förstoring av två- och tredimensionella objekt. Likformighet och kongruens."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "7-9",
+    "subheading": "Sannolikhet och statistik",
+    "heading": "Sannolikhet och statistik (7-9)",
+    "text": "Sannolikhet och metoder för att beräkna sannolikhet i olika situationer. Be­döm­ningar av risker och chanser utifrån datorsimuleringar och statistiskt ma­terial. Kombinatoriska principer och hur de kan användas i olika situationer. Tabeller, diagram och grafer samt hur de tolkas och används för att be­skriva resultat av egna och andras undersökningar, såväl med som utan di­gitala verktyg. Lägesmått och spridningsmått samt hur de används för bedömning av re­sultat vid statistiska undersökningar."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "7-9",
+    "subheading": "Samband och förändring",
+    "heading": "Samband och förändring (7-9)",
+    "text": "Proportionalitet och hur det används för att uttrycka skala, lik­for­mig­het och förändring. Härledda enheter, till exempel km/h och kr/kg. Procent och förändringsfaktor för att uttrycka förändring samt beräkningar med procent i vardagliga situationer och inom olika ämnesområden. Räta linjens ekvation och förändringstakt. Användning av räta lin­jens ekvation för att beskriva samband. Funktioner och hur de används för att beskriva samband och förändring samt undersöka förändringstakt. Hur funk­tio­ner uttrycks i form av grafer, tabeller och funktionsuttryck."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "centralt_innehall",
+    "year": "7-9",
+    "subheading": "Problemlösning",
+    "heading": "Problemlösning (7-9)",
+    "text": "Strategier för att lösa matematiska problem i olika situationer och inom oli­ka ämnesområden samt värdering av valda strategier och metoder. Formulering av matematiska frågeställningar utifrån olika situationer och äm­nesområden. Enkla matematiska modeller och hur de kan användas i olika situationer."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "3",
+    "heading": "Kunskapskrav 3",
+    "text": "Kriterier för bedömning av godtagbara kunskaper i slutet av årskurs 3 Eleven visar grundläggande kunskaper om matematiska begrepp och använder dem med tillfredsställande säkerhet. Eleven ger även exempel på hur några begrepp relaterar till varandra. Eleven visar grundläggande kunskaper om naturliga tal och beskriver tals inbördes relation samt delar upp tal. Eleven visar grundläggande kunskaper om tal i bråkform och delar upp helheter i delar samt jämför och namnger delarna som enkla bråk. Eleven använder och beskriver geometriska mönster och mönster i talföljder. Dessutom använder eleven grundläggande geometriska begrepp och vanliga lägesord för att beskriva geometriska objekts egenskaper, läge och inbördes relationer. Eleven använder och ger exempel på enkla proportionella samband. Eleven väljer och använder i huvudsak fungerande matematiska metoder för att göra enkla beräkningar med naturliga tal och lösa enkla rutinuppgifter med tillfredsställande säkerhet. Eleven använder huvudräkning för att genomföra beräkningar med de fyra räknesätten. Vid addition och subtraktion väljer och använder eleven skriftliga räknemetoder med tillfredsställande säkerhet. Eleven hanterar enkla matematiska likheter och använder då likhetstecknet på ett fungerande sätt. Eleven avbildar och, utifrån instruktioner, konstruerar enkla geometriska objekt. Eleven gör enkla mätningar, jämförelser och uppskattningar av längder, massor, volymer och tider och använder vanliga måttenheter. Vid olika undersökningar avläser och skapar eleven enkla tabeller och diagram för att sortera och redovisa resultat. Eleven löser enkla problem genom att välja och använda någon strategi med viss anpassning till problemets karaktär. Eleven beskriver tillvägagångssätt och ger enkla omdömen om resultatens rimlighet. Eleven för och följer matematiska resonemang genom att ställa och besvara frågor som i huvudsak hör till ämnet. Eleven beskriver och samtalar om tillvägagångssätt på ett i huvudsak fungerande sätt och använder då konkret material, bilder, symboler och andra matematiska uttrycksformer."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "6",
+    "heading": "Kunskapskrav 6",
+    "text": "Betygskriterier för betyget E i slutet av årskurs 6 Eleven visar grundläggande kunskaper om matematiska begrepp samt använder och beskriver begrepp och samband mellan begrepp inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med tillfredsställande säkerhet. Eleven väljer och använder i huvudsak fungerande matematiska metoder för att göra beräkningar och lösa rutinuppgifter inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med tillfredsställande säkerhet. Eleven löser enkla problem. Eleven bidrar till något förslag på alternativt tillvägagångssätt och värderar resultatens rimlighet. Eleven för och följer matematiska resonemang genom att framföra och bemöta påståenden med enkla matematiska argument. Eleven redogör för och samtalar om tillvägagångssätt på ett i huvudsak fungerande sätt och använder då symboler och andra matematiska uttrycksformer."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "6",
+    "heading": "Kunskapskrav 6",
+    "text": "Betygskriterier för betyget D i slutet av årskurs 6 Elevens kunskaper bedöms sammantaget vara mellan C och E."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "6",
+    "heading": "Kunskapskrav 6",
+    "text": "Betygskriterier för betyget C i slutet av årskurs 6 Eleven visar goda kunskaper om matematiska begrepp samt använder och beskriver begrepp och samband mellan begrepp inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med god säkerhet. Eleven väljer och använder ändamålsenliga matematiska metoder för att göra beräkningar och lösa rutinuppgifter inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med god säkerhet. Eleven löser relativt komplexa problem. Eleven ger något förslag på alternativt tillvägagångssätt och värderar resultatens rimlighet. Eleven för och följer matematiska resonemang genom att framföra och bemöta påståenden med relativt väl underbyggda matematiska argument. Eleven redogör för och samtalar om tillvägagångssätt på ett ändamålsenligt sätt och använder då symboler och andra matematiska uttrycksformer."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "6",
+    "heading": "Kunskapskrav 6",
+    "text": "Betygskriterier för betyget B i slutet av årskurs 6 Elevens kunskaper bedöms sammantaget vara mellan A och C."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "6",
+    "heading": "Kunskapskrav 6",
+    "text": "Betygskriterier för betyget A i slutet av årskurs 6 Eleven visar mycket goda kunskaper om matematiska begrepp samt använder och beskriver begrepp och samband mellan begrepp inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med mycket god säkerhet. Eleven väljer och använder ändamålsenliga och effektiva matematiska metoder för att göra beräkningar och lösa rutinuppgifter inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med mycket god säkerhet. Eleven löser komplexa problem. Eleven ger förslag på alternativa tillvägagångssätt och värderar resultatens rimlighet. Eleven för och följer matematiska resonemang genom att framföra och bemöta påståenden med väl underbyggda matematiska argument. Eleven redogör för och samtalar om tillvägagångssätt på ett ändamålsenligt och effektivt sätt och använder då symboler och andra matematiska uttrycksformer."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "9",
+    "heading": "Kunskapskrav 9",
+    "text": "Betygskriterier för betyget E i slutet av årskurs 9 Eleven visar grundläggande kunskaper om matematiska begrepp samt använder och beskriver begrepp och samband mellan begrepp inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med tillfredsställande säkerhet. Eleven väljer och använder i huvudsak fungerande matematiska metoder för att göra beräkningar och lösa rutinuppgifter inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med tillfredsställande säkerhet. Eleven löser enkla problem. Eleven bidrar till något förslag på alternativt tillvägagångssätt. I samband med problemlösning bidrar eleven till att formulera enkla matematiska modeller som kan tillämpas i sammanhanget. Eleven värderar strategier och resultatens rimlighet på ett enkelt sätt. Eleven för och följer matematiska resonemang genom att framföra och bemöta påståenden med enkla matematiska argument. Eleven redogör för och samtalar om tillvägagångssätt på ett i huvudsak fungerande sätt och använder då symboler och andra matematiska uttrycksformer."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "9",
+    "heading": "Kunskapskrav 9",
+    "text": "Betygskriterier för betyget D i slutet av årskurs 9 Elevens kunskaper bedöms sammantaget vara mellan C och E."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "9",
+    "heading": "Kunskapskrav 9",
+    "text": "Betygskriterier för betyget C i slutet av årskurs 9 Eleven visar goda kunskaper om matematiska begrepp samt använder och beskriver begrepp och samband mellan begrepp inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med god säkerhet. Eleven väljer och använder ändamålsenliga matematiska metoder för att göra beräkningar och lösa rutinuppgifter inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med god säkerhet. Eleven löser relativt komplexa problem. Eleven ger något förslag på alternativt tillvägagångssätt. I samband med problemlösning formulerar eleven enkla matematiska modeller som efter någon bearbetning kan tillämpas i sammanhanget. Eleven värderar strategier och resultatens rimlighet på ett utvecklat sätt. Eleven för och följer matematiska resonemang genom att framföra och bemöta påståenden med relativt väl underbyggda matematiska argument. Eleven redogör för och samtalar om tillvägagångssätt på ett ändamålsenligt sätt och använder då symboler och andra matematiska uttrycksformer."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "9",
+    "heading": "Kunskapskrav 9",
+    "text": "Betygskriterier för betyget B i slutet av årskurs 9 Elevens kunskaper bedöms sammantaget vara mellan A och C."
+  },
+  {
+    "subject": "Matematik",
+    "subject_code": "GRGRMAT01",
+    "version": 14,
+    "section": "kunskapskrav",
+    "year": "9",
+    "heading": "Kunskapskrav 9",
+    "text": "Betygskriterier för betyget A i slutet av årskurs 9 Eleven visar mycket goda kunskaper om matematiska begrepp samt använder och beskriver begrepp och samband mellan begrepp inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med mycket god säkerhet. Eleven väljer och använder ändamålsenliga och effektiva matematiska metoder för att göra beräkningar och lösa rutinuppgifter inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med mycket god säkerhet. Eleven löser komplexa problem. Eleven ger förslag på alternativa tillvägagångssätt. I samband med problemlösning formulerar eleven enkla matematiska modeller som kan tillämpas i sammanhanget. Eleven värderar strategier och resultatens rimlighet på ett välutvecklat sätt. Eleven för och följer matematiska resonemang genom att framföra och bemöta påståenden med väl underbyggda matematiska argument. Eleven redogör för och samtalar om tillvägagångssätt på ett ändamålsenligt och effektivt sätt och använder då symboler och andra matematiska uttrycksformer."
+  }
+]
