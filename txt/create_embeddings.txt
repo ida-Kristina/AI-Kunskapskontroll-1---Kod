@@ -1,0 +1,49 @@
+# %%
+import json
+import os
+import numpy as np
+from sentence_transformers import SentenceTransformer
+import faiss
+
+# %%
+# Laddar chunkar
+with open("data/matematik_chunks.json", "r", encoding="utf-8") as f:
+    chunks = json.load(f)
+
+print(f"Laddade {len(chunks)} chunkar")
+
+# %%
+# Plockar ut text från varje chunk
+texts = [chunk.get("text", "") for chunk in chunks]
+
+# Laddar modellen som skapar embeddings
+model = SentenceTransformer("all-MiniLM-L6-v2")
+
+# Skapar embeddings och normaliserar dem
+embeddings = model.encode(texts, normalize_embeddings=True).astype("float32")
+
+print(f"Skapade embeddings med form: {embeddings.shape}")
+
+
+# %%
+# Spara embeddings och metadata
+os.makedirs("data", exist_ok=True)
+np.save("data/matematik_embeddings.npy", embeddings)
+
+with open("data/matematik_metadata.json", "w", encoding="utf-8") as f:
+    json.dump(chunks, f, ensure_ascii=False, indent=2)
+
+# %%
+# 3. Bygg FAISS-index för snabb lookup 
+dimension = embeddings.shape[1]
+index = faiss.IndexFlatIP(dimension)
+index.add(embeddings)
+
+faiss.write_index(index, "data/matematik_index.faiss")
+
+print("Klart! Sparade:")
+print("- data/matematik_embeddings.npy")
+print("- data/matematik_metadata.json")
+print("- data/matematik_index.faiss")
+
+

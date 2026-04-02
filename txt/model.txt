@@ -1,0 +1,58 @@
+# %%
+import json
+from N5_retriever import SubjRetriever
+from N4_generator import SubjGenerator
+import warnings
+import os
+
+# %%
+# Spenderade lång tid på att försöka lösa felmeddelandena... Det fick bli såhär istället.
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+warnings.filterwarnings("ignore", category=FutureWarning)
+
+# %%
+# Initiera komponenter (körs en gång)
+retriever = SubjRetriever()
+generator = SubjGenerator()
+
+print("Retriever laddad (FAISS")
+print("Generator laddad (GPT-SW3)")
+
+# %%
+# Testfrågor - Verifiera att allt funkar
+test_queries = [
+    "ska jag jobba med algebra i årskurs 4-6",
+    "kunskapskrav geometri årskurs 6?", 
+    "vad krävs för E i matte åk 6?",
+    "vad är syftet med matematikundervisning?"
+]
+
+print("\n" + "="*80)
+print("TEST: Kör 4 frågor genom hela pipelinen")
+print("="*80)
+
+for i, query in enumerate(test_queries, 1):
+    print(f"\nTEST {i}: '{query}'")
+    
+    # Hämta relevanta chunks
+    contexts, sources = retriever.retrieve(query, k=4)
+    
+    # Generera svar
+    answer = generator.generate_response(query, contexts, sources)
+    
+    print(f"📄 SVAR: {answer}") 
+    print("-" * 80)
+
+# %% [markdown]
+# Den här prototypen för en RAG-bot (Retrieval-Augmented Generation) baserad på kursplanen för matematik, hämtat via API från Skolverket. I en slutgiltig version, med alla ämnen  laddade, kan botten vara en assistent för både elever och lärare. 
+# 
+# ## Elever
+# 
+# Boten skulle kunna användas av elever som vill ha en djupare förståelse för kursplanerna, t.ex. inför prov, upsatser eller andra examinationer. Chattbotten skulle kunna vara bidragande till att hålla kusplanen levande, istället för att begränsat till bara den där obligatoriska genomgången i början av en termin som man knappt förstod något av. Chattbotten skulle kunna hjälpa till att göra innehållet mer begripligt och tillgängligt för elever som, exempelvis utifrån ålder, inte har förutsättningar att ta sig an informationen på egen hand. Ett etiskt dilemma är att det mycket väl skulle kunna användas för att fuska mer effektivt - "skriv om min upsats så att den bättre matchar kursmålen", etc. Boten skulle behöva noga begränsas för att förhindra detta - men detta, i min erfarenhet, verkar vara svårt även för de stora företagen att implementera utan att det är relativt lätt att kringgå. 
+# 
+# ## Lärare
+# 
+# För lärare finns inte samma risk för fusk. För lärare kan botten vara ett hjälpsamt verktyg för att vara säker på att man håller sig till kursplanera och täcker allt centralt innehåll. Boten skulle kunna hjälpa till med förslag om uppgifter eller för lektionsplanering. Med källhänvisningar kan pedagoger också försäkra sig om att informationen de tar del av stämmer. Med samtliga ämnen inladdade i modellen skulle det också finnas möjligheter för lärare att genomföra större projekt, där man har samverkan mellan ämnen och checkar av centralt innehåll i båda (eller fler?) kursplaner. Pedagoger, särskilt i högre åldrar, har ofta djup kunskap om sitt eget ämne, men begränsad kännedom om andra. En gemensam och lättillgänglig kunskapsbas skulle således kunna öppna dörrar för samverkan. 
+# Ett naturligt steg för breddning i användningsområde ser jag skulle vara att implementera att modellen också används för bedömning. Den har ju trots allt information om allt en elev ska bedömas på, och datorer är ju alltid opartiska, så bedömningen skulle definitivt alltid bli helt korrekt och objektiv! Eller inte. Här blir det snabbt risk för att felaktiga bedömningar görs i en "svart låda" där man inte kan se vad det är som faktiskt utvärderts, även när modellen ombeds motivera sina beslut. Enligt skollagen (3 kap 16§) ska betyg "beslutas av den eller de lärare som bedriver undervisningen vid den tidpunkt när betyg ska sättas", vilket begränsar detta något, men lämnar fortfarande dörren vidöppen för att ta emot "rekommendationer" av AI. Detta skulle i längden kunna leda till "slarv" i bedömningen av uppgifter, där pedagoger litar blint på den bedömning AI ger. Det skulle också kunna leda till att pedagoger inte granskade elevernas uppgifter på samma sätt, vilket innebär att de inte får kännedom om elevens faktiska kunskaper - något man skulle kunna argumentera faktiskt är hela poängen med alla bedömningar fram till gymnasiet. Läraren går då miste om en möjlighet till att anpassa sin undervisning, samt riskerar att missa elever i behov av särskilt stöd (något som måste uppmärksammas och utredas skyndsamt enligt skollagen).
+
+
