@@ -5,3 +5,4 @@ faiss-cpu
 transformers
 torch
 numpy
+sentencepiece
