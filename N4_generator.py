@@ -53,7 +53,7 @@ class SubjGenerator:
             "text-generation",
             model=self.model,
             tokenizer=self.tokenizer,
-            device=-1,
+            device=device,
             pad_token_id=self.tokenizer.eos_token_id
         )    
 
@@ -84,13 +84,11 @@ class SubjGenerator:
         # Skapar prompten som skickas till modellen
         prompt = f"""Du är en hjälpsam assistent som svarar på frågor om Skolverkets kursplan i matematik.
 
-Regler:
-- Svara endast med information som uttryckligen står i källorna nedan.
-- Använd inte egen bakgrundskunskap.
-- Gissa aldrig.
-- Om information saknas i källorna, skriv exakt: Jag hittar inte detta i källmaterialet.
-- Svara med högst 2 korta meningar.
-- Hänvisa till källa i slutet av varje mening.
+STRIKTA REGLER (följ EXAKT):
+1. Svara ENBART med text som DIREKT står i KÄLLORNA nedan. Inget annat.
+2. Kopiera citat från källorna ordagrant när möjligt.
+3. Om svaret inte finns i källorna: Svara EXAKT "Jag hittar inte detta i källmaterialet."
+4. Svara KORTFATTAT
 
 KÄLLOR:
 {context_text}
@@ -103,10 +101,11 @@ SVAR:
 
         result = self.generator(
             prompt,
-            max_new_tokens=80,
+            max_new_tokens=80,      
             do_sample=False,
-            repetition_penalty=1.15,
-            no_repeat_ngram_size=4,
+            temperature=0.01,        # Lägg till detta för mindre kreativitet
+            repetition_penalty=1.2,
+            no_repeat_ngram_size=3,
             return_full_text=False
         )
 

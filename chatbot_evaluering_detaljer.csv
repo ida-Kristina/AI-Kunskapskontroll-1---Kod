@@ -1,19 +1,110 @@
-﻿kategori,fråga,hämtade_källor,hämtad_kontext,modellens_svar,relevans_0_1,källtrohet_0_1,retrieval_träff_0_1,tydlighet_0_1,hallucination_0_1,kommentar,totalpoäng
-syfte,vad är syftet med matematikundervisning?,"GRGRMAT01 v14 (Årskurs: 4-6, Sektion: centralt_innehall) | GRGRMAT01 v14 (Årskurs: 1-3, Sektion: centralt_innehall) | GRGRMAT01 v14 (Årskurs: 4-6, Sektion: centralt_innehall) | GRGRMAT01 v14 (Årskurs: 7-9, Sektion: centralt_innehall)","Formulering av matematiska frågeställningar utifrån vardagliga situatio­ner. || Metoder för beräkningar med naturliga tal, vid huvudräkning, över­slags­räkning och skriftlig beräkning. Användning av digitala verktyg vid be­räk­ningar.","Syftet med matematik är att hjälpa människor att förstå världen omkring dem och att delta i det dagliga livet genom att använda matematik för att lösa problem och fatta beslut. Matematik hjälper också studenter att utveckla sina kritiska tänkande färdigheter, kreativitet och problemlösningsförmåga.",1,0,0,1,0,Bra svar men är i fel sektion och kikar - borde varit i syfte.,2
-centralt innehåll,ska jag jobba med algebra i årskurs 4-6?,"GRGRMAT01 v14 (Årskurs: 4-6, Sektion: centralt_innehall) | GRGRMAT01 v14 (Årskurs: 6, Sektion: kunskapskrav) | GRGRMAT01 v14 (Årskurs: 4-6, Sektion: centralt_innehall) | GRGRMAT01 v14 (Årskurs: 1-3, Sektion: centralt_innehall)","Algebra för årskurs 4-6. Variabler och deras användning i enkla algebraiska uttryck och ekvationer. || Kunskapskrav för årskurs 6. Eleven väljer och använder ändamålsenliga och effektiva matematiska metoder för att göra beräkningar och lösa rutinuppgifter inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med mycket god säkerhet.","Ja, det är viktigt att arbeta med algebra under hela din skolgång eftersom det kommer att hjälpa dig att förstå och använda grundläggande begrepp senare i livet. Algebra kan användas för att lösa problem inom många olika områden, från vetenskap och teknik till ekonomi och samhällsvetenskap. Det hjälper dig också att utveckla dina logiska tänkande färdigheter och problemlösningsförmåga. Dessutom ger det dig en grundlig förståelse för hur siffror och tal fungerar, vilket är avgörande för framgång i många ämnen. Så, oavsett om du är intresserad av att bli ingenjör eller forskare, är algebra ett måste!",1,1,1,1,0,"Lite väl utförligt förklarat om varför, istället för bara ja/nej",4
-specifik fråga kunskapskrav,kunskapskrav geometri årskurs 6?,"GRGRMAT01 v14 (Årskurs: 6, Sektion: kunskapskrav) | GRGRMAT01 v14 (Årskurs: 6, Sektion: kunskapskrav) | GRGRMAT01 v14 (Årskurs: 1-3, Sektion: centralt_innehall) | GRGRMAT01 v14 (Årskurs: 4-6, Sektion: centralt_innehall)","Kunskapskrav för årskurs 6. Eleven visar goda kunskaper om matematiska begrepp samt använder och beskriver begrepp och samband mellan begrepp inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med god säkerhet. || Kunskapskrav för årskurs 6. Eleven väljer och använder ändamålsenliga matematiska metoder för att göra beräkningar och lösa rutinuppgifter inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med god säkerhet.","Ja, här följer några exempel på frågor som kan ställas för att kontrollera att eleven har förstått kunskapskraven i geometri i årskurs 5:
+﻿kategori,fråga,has_support,best_score,alla_scores,hämtade_källor,hämtad_kontext,modellens_svar,relevans_0_1,källtrohet_0_1,retrieval_träff_0_1,tydlighet_0_1,hallucination_0_1,kommentar,totalpoäng
+syfte,vad är syftet med matematikundervisning?,True,0.61321443,0.6132 | 0.5973 | 0.588,"GRGRMAT01 v14 (Årskurs: 4-6, Sektion: centralt_innehall) | GRGRMAT01 v14 (Årskurs: 1-3, Sektion: centralt_innehall) | GRGRMAT01 v14 (Årskurs: 4-6, Sektion: centralt_innehall)","Formulering av matematiska frågeställningar utifrån vardagliga situatio­ner. || Metoder för beräkningar med naturliga tal, vid huvudräkning, över­slags­räkning och skriftlig beräkning. Användning av digitala verktyg vid be­räk­ningar.","Du är en hjälpsam assistent som svarar på frågor om Skolverkets kursplan i matematik.
 
-    Vad innebär det att ett område är kongruent med en rätvinklig triangel?
-    Hur kan man beräkna omkretsen av en kvadrat?
-   Vilka är de grundläggande begreppen i area och volym?
-     Kan du förklara hur man beräknar arean av en rektangel?",1,1,1,1,0,Ser bra ut! Bra med exempel på lite slarvigt formulerad fråga,4
-gränsfall,vad säger kursplanen om programmering i matematik?,"GRGRMAT01 v14 (Årskurs: 4-6, Sektion: centralt_innehall) | GRGRMAT01 v14 (Årskurs: 1-3, Sektion: centralt_innehall) | GRGRMAT01 v14 (Årskurs: 9, Sektion: kunskapskrav) | GRGRMAT01 v14 (Årskurs: None, Sektion: syfte)","Programmering i visuella programmeringsmiljöer. Hur algoritmer ska­pas och används vid programmering. || Entydiga stegvisa instruktioner och hur de konstrueras, beskrivs och följs som grund för programmering. Hur symboler används vid stegvisa in­struk­tioner.","Programmering i matematik är ett viktigt område inom matematik som hjälper elever att utveckla sina problemlösningsförmågor och kommunikationsförmåga. Kursplanen anger att programmering ska användas som ett verktyg för att lösa matematiska problem och ge eleverna möjlighet att använda matematikens begrepp, metoder och uttrycksformer för att göra beräkningar och lösa problem.
-    
-        Några exempel på områden där programmering kan användas inkluderar:
-    - Aritmetik och algebra
-    – Geometri och trigonometri
-    − Logik och beslutsfattande
-    • Grafteori
-    — Programmeringsspråk som Python, Java och C ++ används ofta i matematikprogramvara.
-    Programmering kan också användas för att skapa spel eller simuleringar, utforska algoritmer och datastrukturer, testa och utvärdera program och mycket mer.",1,1,1,1,0,Tydligt och utförligt svar. Källor ser ok ut.,4
-fråga som det inte ska finnas svar på,vart ligger atlantis?,"GRGRMAT01 v14 (Årskurs: 4-6, Sektion: centralt_innehall) | GRGRMAT01 v14 (Årskurs: 7-9, Sektion: centralt_innehall) | GRGRMAT01 v14 (Årskurs: 4-6, Sektion: centralt_innehall) | GRGRMAT01 v14 (Årskurs: 1-3, Sektion: centralt_innehall)",Geometri för årskurs 4-6. Skala vid förminskning och förstoring samt användning av skala i elevnära situa­tioner. || Talsystemets utveckling från naturliga tal till reella tal.,"Atlantis var en civilisation som uppstod i den marina världen för cirka 5000 år sedan. Den låg på den afrikanska kontinenten, ungefär vid ekvatorn.",1,0,0,0,1,Nej...,0
+STRIKTA REGLER (följ EXAKT):
+1. Svara ENBART med text som DIREKT står i KÄLLORNA nedan. Inget annat.
+2. Kopiera citat från källorna ordagrant när möjligt.
+3. Om svaret inte finns i källorna: Svara EXAKT ""Jag hittar inte detta i källmaterialet.""
+4. Svara KORTFATTAT
+
+KÄLLOR:
+KÄLLA 1: GRGRMAT01 v14 (Årskurs: 4-6, Sektion: centralt_innehall)
+TEXT: Formulering av matematiska frågeställningar utifrån vardagliga situatio­ner.
+
+KÄLLA 2: GRGRMAT01 v14 (Årskurs: 1-3, Sektion: centralt_innehall)
+TEXT: Metoder för beräkningar med naturliga tal, vid huvudräkning, över­slags­räkning och skriftlig beräkning. Användning av digitala verktyg vid be­räk­ningar.
+
+KÄLLA 3: GRGRMAT01 v14 (Årskurs: 4-6, Sektion: centralt_innehall)
+TEXT: Jämförelse, uppskattning och mätning av längd, area, massa, volym, tid och vin­kel med standardiserade måttenheter samt enhetsbyten i samband med detta.
+
+
+
+FRÅGA:
+vad är syftet med matematikundervisning?
+
+SVAR:
+Syftet med matematikundervisningen är att ge eleverna de kunskaper och färdigheter som krävs för att kunna lösa problem inom olika områden av livet. Matematik används ofta i utbildningssammanhang för att förklara komplexa begrepp och lösa problem. Det kan också användas som ett verktyg för lärande och kommunikation mellan elever.",1,1,1,1,0,"Bra svar, och nu är vi i syftessektionen!",4
+centralt innehåll,ska jag jobba med algebra i årskurs 4-6?,True,0.72349083,0.7235 | 0.6772 | 0.6544,"GRGRMAT01 v14 (Årskurs: 4-6, Sektion: centralt_innehall) | GRGRMAT01 v14 (Årskurs: 6, Sektion: kunskapskrav) | GRGRMAT01 v14 (Årskurs: 4-6, Sektion: centralt_innehall)","Algebra för årskurs 4-6. Variabler och deras användning i enkla algebraiska uttryck och ekvationer. || Kunskapskrav för årskurs 6. Eleven väljer och använder ändamålsenliga och effektiva matematiska metoder för att göra beräkningar och lösa rutinuppgifter inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med mycket god säkerhet.","Du är en hjälpsam assistent som svarar på frågor om Skolverkets kursplan i matematik.
+
+STRIKTA REGLER (följ EXAKT):
+1. Svara ENBART med text som DIREKT står i KÄLLORNA nedan. Inget annat.
+2. Kopiera citat från källorna ordagrant när möjligt.
+3. Om svaret inte finns i källorna: Svara EXAKT ""Jag hittar inte detta i källmaterialet.""
+4. Svara KORTFATTAT
+
+KÄLLOR:
+KÄLLA 1: GRGRMAT01 v14 (Årskurs: 4-6, Sektion: centralt_innehall)
+TEXT: Algebra för årskurs 4-6. Variabler och deras användning i enkla algebraiska uttryck och ekvationer.
+
+KÄLLA 2: GRGRMAT01 v14 (Årskurs: 6, Sektion: kunskapskrav)
+TEXT: Kunskapskrav för årskurs 6. Eleven väljer och använder ändamålsenliga och effektiva matematiska metoder för att göra beräkningar och lösa rutinuppgifter inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med mycket god säkerhet.
+
+KÄLLA 3: GRGRMAT01 v14 (Årskurs: 4-6, Sektion: centralt_innehall)
+TEXT: Geometri för årskurs 4-6. Skala vid förminskning och förstoring samt användning av skala i elevnära situa­tioner.
+
+
+
+FRÅGA:
+ska jag jobba med algebra i årskurs 4-6?
+
+SVAR:
+Ja! Att arbeta med algebra kan vara ett bra sätt att lära sig grundläggande begrepp inom ämnet. Det ger dig också möjlighet att utveckla din förmåga att tänka logiskt och kreativt. Dessutom kommer du att få praktisk erfarenhet genom att använda olika verktyg och tekniker i ditt arbete.",1,1,1,1,0,"Sakligt och utförligt, med lite info om varför",4
+specifik fråga kunskapskrav,kunskapskrav geometri årskurs 6?,True,0.8649435,0.8649 | 0.6983 | 0.6761,"GRGRMAT01 v14 (Årskurs: 6, Sektion: kunskapskrav) | GRGRMAT01 v14 (Årskurs: 1-3, Sektion: centralt_innehall) | GRGRMAT01 v14 (Årskurs: 4-6, Sektion: centralt_innehall)","Kunskapskrav för årskurs 6. Eleven visar goda kunskaper om matematiska begrepp samt använder och beskriver begrepp och samband mellan begrepp inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med god säkerhet. || Geometri för årskurs 1-3. Skala vid enkel förminskning och förstoring.","Du är en hjälpsam assistent som svarar på frågor om Skolverkets kursplan i matematik.
+
+STRIKTA REGLER (följ EXAKT):
+1. Svara ENBART med text som DIREKT står i KÄLLORNA nedan. Inget annat.
+2. Kopiera citat från källorna ordagrant när möjligt.
+3. Om svaret inte finns i källorna: Svara EXAKT ""Jag hittar inte detta i källmaterialet.""
+4. Svara KORTFATTAT
+
+KÄLLOR:
+KÄLLA 1: GRGRMAT01 v14 (Årskurs: 6, Sektion: kunskapskrav)
+TEXT: Kunskapskrav för årskurs 6. Eleven visar goda kunskaper om matematiska begrepp samt använder och beskriver begrepp och samband mellan begrepp inom områdena taluppfattning och tals användning, algebra, geometri, sannolikhet och statistik samt samband och förändring med god säkerhet.
+
+KÄLLA 2: GRGRMAT01 v14 (Årskurs: 1-3, Sektion: centralt_innehall)
+TEXT: Geometri för årskurs 1-3. Skala vid enkel förminskning och förstoring.
+
+KÄLLA 3: GRGRMAT01 v14 (Årskurs: 4-6, Sektion: centralt_innehall)
+TEXT: Geometri för årskurs 4-6. Symmetri i planet och hur symmetri kan konstrueras.
+
+
+
+FRÅGA:
+kunskapskrav geometri årskurs 6?
+
+SVAR:
+Ja! Här följer ett exempel på hur du kan ställa frågor till Skolverket angående kunskapskraven i geometri för årskursen 6:
+
+Vad innebär geometrisk form i geometrin?
+Vilka egenskaper har geometriska former?
+Hur påverkas geometrien av olika material och ytor?
+Vilken betydelse har geometriken i det fysiska rummet?",1,1,1,0,0,Lite konstigt att den hänvisar till att 'ställa frågor till skolverket'....,3
+gränsfall,vad säger kursplanen om programmering i matematik?,True,0.71863854,0.7186 | 0.5994 | 0.5274,"GRGRMAT01 v14 (Årskurs: 4-6, Sektion: centralt_innehall) | GRGRMAT01 v14 (Årskurs: 1-3, Sektion: centralt_innehall) | GRGRMAT01 v14 (Årskurs: 9, Sektion: kunskapskrav)","Programmering i visuella programmeringsmiljöer. Hur algoritmer ska­pas och används vid programmering. || Entydiga stegvisa instruktioner och hur de konstrueras, beskrivs och följs som grund för programmering. Hur symboler används vid stegvisa in­struk­tioner.","Du är en hjälpsam assistent som svarar på frågor om Skolverkets kursplan i matematik.
+
+STRIKTA REGLER (följ EXAKT):
+1. Svara ENBART med text som DIREKT står i KÄLLORNA nedan. Inget annat.
+2. Kopiera citat från källorna ordagrant när möjligt.
+3. Om svaret inte finns i källorna: Svara EXAKT ""Jag hittar inte detta i källmaterialet.""
+4. Svara KORTFATTAT
+
+KÄLLOR:
+KÄLLA 1: GRGRMAT01 v14 (Årskurs: 4-6, Sektion: centralt_innehall)
+TEXT: Programmering i visuella programmeringsmiljöer. Hur algoritmer ska­pas och används vid programmering.
+
+KÄLLA 2: GRGRMAT01 v14 (Årskurs: 1-3, Sektion: centralt_innehall)
+TEXT: Entydiga stegvisa instruktioner och hur de konstrueras, beskrivs och följs som grund för programmering. Hur symboler används vid stegvisa in­struk­tioner.
+
+KÄLLA 3: GRGRMAT01 v14 (Årskurs: 9, Sektion: kunskapskrav)
+TEXT: Kunskapskrav för årskurs 9. Eleven löser komplexa problem. Eleven ger förslag på alternativa tillvägagångssätt. I samband med problemlösning formulerar eleven enkla matematiska modeller som kan tillämpas i sammanhanget. Eleven värderar strategier och resultatens rimlighet på ett välutvecklat sätt.
+
+
+
+FRÅGA:
+vad säger kursplanen om programmering i matematik?
+
+SVAR:
+I kursplanen för matematik finns det information om programmering inom olika områden såsom datavetenskap, teknik, naturvetenskap och samhällsvetenskap. Några exempel på dessa områden inkluderar:
+
+Datavetenskap - Datasystemprogrammering, maskininlärning, simuleringsteknik, dataanalys och databehandling.
+Teknik - Programvaruutveckling, hårdvarudesign, nätverksteknik, systemdesign och driftsättning",1,1,1,1,1,"Utförligt svar, men är lite osäker på om den börjat hallucinera - känns osannolikt att man jobbar med 'simuleringsteknik'...",3
+fråga som det inte ska finnas svar på,vart ligger atlantis?,False,0.34304392,0.343 | 0.3364 | 0.3135,,,Jag hittar inte detta i källmaterialet.,1,1,1,1,0,🥳🥳,4
