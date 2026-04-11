@@ -5,16 +5,27 @@ import re
 from sentence_transformers import SentenceTransformer
 import faiss
 
+
 class SubjRetriever:
 
-    def __init__(self):
-        # På förekommen anledning - felsökningsstöd 
-        index_path = "data/matematik_index.faiss"
-        embeddings_path = "data/matematik_embeddings.npy"
-        metadata_path = "data/matematik_metadata.json"
+    def __init__(
+        self,
+        index_path="data/matematik_index.faiss",
+        embeddings_path="data/matematik_embeddings.npy",
+        metadata_path="data/matematik_metadata.json",
+        model_name="all-MiniLM-L6-v2",
+        verbose=False
+    ):
+        # Sparar sökvägar och inställningar i objektet
+        self.index_path = index_path
+        self.embeddings_path = embeddings_path
+        self.metadata_path = metadata_path
+        self.model_name = model_name
+        self.verbose = verbose
 
+        # Kollar om någon av filerna saknas
         missing_files = [
-            path for path in [index_path, embeddings_path, metadata_path]
+            path for path in [self.index_path, self.embeddings_path, self.metadata_path]
             if not os.path.exists(path)
         ]
 
@@ -22,20 +33,33 @@ class SubjRetriever:
             raise FileNotFoundError(
                 "Följande filer saknas i data-mappen: " + ", ".join(missing_files)
             )
-        
-        
+
         # Laddar in modell och sparade filer
-        self.model = SentenceTransformer("all-MiniLM-L6-v2")
-        self.index = faiss.read_index("data/matematik_index.faiss")
-        self.embeddings = np.load("data/matematik_embeddings.npy")
-        
-        with open("data/matematik_metadata.json", "r", encoding="utf-8") as f:
+        self.model = SentenceTransformer(self.model_name)
+        self.index = faiss.read_index(self.index_path)
+        self.embeddings = np.load(self.embeddings_path)
+
+        with open(self.metadata_path, "r", encoding="utf-8") as f:
             self.chunks = json.load(f)
 
-    def search_chunks(self, query, k=5):
-        """
-        Hybrid-sök: semantisk sökning + enkel metadata-boost.
-        """
+        # Kollar så att antal embeddings, metadata och index-poster matchar
+        if len(self.chunks) != len(self.embeddings):
+            raise ValueError(
+                f"Antal chunkar ({len(self.chunks)}) matchar inte antal embeddings ({len(self.embeddings)})."
+            )
+
+        if self.index.ntotal != len(self.chunks):
+            raise ValueError(
+                f"FAISS-index innehåller {self.index.ntotal} poster men metadata innehåller {len(self.chunks)} chunkar."
+            )
+
+    def _log(self, message):
+        # Skriver bara ut debug-info om verbose=True
+        if self.verbose:
+            print(message)
+
+    def _extract_filters(self, query):
+        # Gör frågan till små bokstäver för enklare matchning
         query_lower = query.lower()
 
         # Sparar ev. hintar från frågan
@@ -84,9 +108,37 @@ class SubjRetriever:
                 section_filter = section
                 break
 
+        return year_filter, section_filter
+
+    def _boost_score(self, score, chunk, year_filter=None, section_filter=None):
+        # Ger lite extra vikt om årskursen matchar
+        if year_filter and str(chunk.get("year", "")) == str(year_filter):
+            score *= 1.1
+
+        # Ger lite extra vikt om sektionen matchar
+        if section_filter and chunk.get("section") == section_filter:
+            score *= 1.1
+
+        return score
+
+    def _format_source(self, chunk):
+        # Bygger en lite tydligare källhänvisning
+        return (
+            f"{chunk.get('code', 'GRGRMAT01')} v{chunk.get('version', 'Okänd')} "
+            f"(Årskurs: {chunk.get('year', 'N/A')}, Sektion: {chunk.get('section', 'N/A')})"
+        )
+
+    def search_chunks(self, query, k=5):
+        """
+        Hybrid-sök: semantisk sökning + enkel metadata-boost.
+        """
+
+        # Hämtar ev. hintar om årskurs och sektion från frågan
+        year_filter, section_filter = self._extract_filters(query)
+
         # Hjälp vid felsökning
-        print(f"Query: '{query}'")
-        print(f"Year hint: {year_filter}, Section hint: {section_filter}")
+        self._log(f"Query: '{query}'")
+        self._log(f"Year hint: {year_filter}, Section hint: {section_filter}")
 
         # Skapar embedding för frågan
         query_embedding = self.model.encode(
@@ -94,7 +146,7 @@ class SubjRetriever:
             normalize_embeddings=True
         ).astype("float32")
 
-        # Söker i FAISS-index
+        # Söker i FAISS-index och hämtar lite fler kandidater än vi slutligen vill ha
         distances, indices = self.index.search(query_embedding, k * 4)
 
         # Gör om träffarna till en score-tabell
@@ -109,39 +161,46 @@ class SubjRetriever:
         selected_indices = self.mmr(query_embedding[0], candidate_indices, k * 2)
 
         results = []
-        seen_headings = set()
+
+        # Håller koll på vilka chunkar som redan liknar varandra för mycket
+        seen_keys = set()
 
         for i in selected_indices:
             if i == -1:
                 continue
 
             chunk = self.chunks[i]
-            heading = chunk.get("heading", "")
 
-            # Undviker dubbla rubriker i resultatet
-            if heading in seen_headings:
+            # Skapar en nyckel för att undvika för lika dubletter
+            dedupe_key = (
+                chunk.get("heading", ""),
+                chunk.get("year", ""),
+                chunk.get("section", "")
+            )
+
+            # Undviker dubbla rubriker inom samma typ av innehåll
+            if dedupe_key in seen_keys:
                 continue
 
-            # Hämtar score från FAISS
+            # Hämtar grundscore från FAISS
             score = faiss_scores.get(i, 0.0)
 
-            # Ger lite extra vikt om årskursen matchar
-            if year_filter and str(chunk.get("year", "")) == str(year_filter):
-                score *= 1.1
+            # Justerar score lite om metadata matchar frågan
+            score = self._boost_score(
+                score,
+                chunk,
+                year_filter=year_filter,
+                section_filter=section_filter
+            )
 
-            # Ger lite extra vikt om sektionen matchar
-            if section_filter and chunk.get("section") == section_filter:
-                score *= 1.1
-
+            # Sparar träffen
             results.append((score, i, chunk))
-            seen_headings.add(heading)
+            seen_keys.add(dedupe_key)
 
-            # Slutar när vi har tillräckligt många resultat
-            if len(results) >= k:
-                break
-
-        # Sorterar på score
+        # Sorterar på score efter att eventuell boost lagts på
         results.sort(key=lambda x: x[0], reverse=True)
+
+        # Returnerar bara de k bästa träffarna
         return results[:k]
 
     def retrieve(self, query, k=5, min_score=0.35):
@@ -164,9 +223,14 @@ class SubjRetriever:
         # Hämtar bästa träffens score
         best_score = scores[0]
 
+        # Räknar även ut medelvärdet för de tre bästa träffarna
+        top_n = min(3, len(scores))
+        avg_top_score = sum(scores[:top_n]) / top_n
+
         # Hjälp vid felsökning
-        print(f"Top scores: {scores[:3]}")
-        print(f"Best score: {best_score}")
+        self._log(f"Top scores: {scores[:3]}")
+        self._log(f"Best score: {best_score}")
+        self._log(f"Average top-{top_n} score: {avg_top_score}")
 
         # Stoppar vidare svar om träffen är för svag
         if best_score < min_score:
@@ -183,8 +247,7 @@ class SubjRetriever:
 
         # Bygger källhänvisningar
         sources = [
-            f"{chunk.get('code', 'GRGRMAT01')} v{chunk.get('version', 'Okänd')} "
-            f"(Årskurs: {chunk.get('year', 'N/A')}, Sektion: {chunk.get('section', 'N/A')})"
+            self._format_source(chunk)
             for _, _, chunk in results
         ]
 
