@@ -39,10 +39,18 @@ class SubjGenerator:
             pad_token_id=tokenizer.eos_token_id
         )
 
-    def generate_response(self, query, contexts, sources):
+    def generate_response(self, query, retrieval_result):
+        # Om retrievern bedömer att stödet är för svagt
+        if not retrieval_result["has_support"]:
+            return "Jag hittar inte detta i källmaterialet."
+        
+        # Plockar ut kontexter och källor från retrieval-resultatet
+        contexts = retrieval_result["contexts"]
+        sources = retrieval_result["sources"]
+        
         # Om det inte finns någon kontext att jobba med
         if not contexts:
-            return "Jag hittar ingen relevant information om detta i källmaterialet."
+            return "Jag hittar inte detta i källmaterialet."
 
         # Ser till att vi bara använder lika många källor som kontexter
         paired_items = list(zip(contexts[:3], sources[:3]))
@@ -56,11 +64,13 @@ class SubjGenerator:
         prompt = f"""Du är en hjälpsam assistent som svarar på frågor om Skolverkets kursplan i matematik.
 
         Regler:
-        - Svara endast med stöd av källorna nedan.
+        - Svara endast med information som uttryckligen står i källorna nedan.
+        - Använd inte egen bakgrundskunskap.
+        - Gissa aldrig.
         - Om information saknas i källorna, skriv exakt: Jag hittar inte detta i källmaterialet.
         - Svara med högst 3 korta meningar.
-        - Upprepa inte samma information.
-        - Hänvisa till källa i slutet av relevanta meningar.
+        - Hänvisa till källa i slutet av varje mening.
+        - Om frågan inte handlar om innehållet i källorna, skriv exakt: Jag hittar inte detta i källmaterialet.
 
         KÄLLOR:
         {context_text}

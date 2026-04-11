@@ -5,8 +5,8 @@ import re
 from sentence_transformers import SentenceTransformer
 import faiss
 
-
 class SubjRetriever:
+
     def __init__(self):
         # På förekommen anledning - felsökningsstöd 
         index_path = "data/matematik_index.faiss"
