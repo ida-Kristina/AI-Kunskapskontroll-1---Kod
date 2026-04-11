@@ -1,4 +1,5 @@
 import json
+import os
 import numpy as np
 import re
 from sentence_transformers import SentenceTransformer
@@ -7,10 +8,27 @@ import faiss
 
 class SubjRetriever:
     def __init__(self):
+        # På förekommen anledning - felsökningsstöd 
+        index_path = "data/matematik_index.faiss"
+        embeddings_path = "data/matematik_embeddings.npy"
+        metadata_path = "data/matematik_metadata.json"
+
+        missing_files = [
+            path for path in [index_path, embeddings_path, metadata_path]
+            if not os.path.exists(path)
+        ]
+
+        if missing_files:
+            raise FileNotFoundError(
+                "Följande filer saknas i data-mappen: " + ", ".join(missing_files)
+            )
+        
+        
         # Laddar in modell och sparade filer
         self.model = SentenceTransformer("all-MiniLM-L6-v2")
         self.index = faiss.read_index("data/matematik_index.faiss")
         self.embeddings = np.load("data/matematik_embeddings.npy")
+        
         with open("data/matematik_metadata.json", "r", encoding="utf-8") as f:
             self.chunks = json.load(f)
 
