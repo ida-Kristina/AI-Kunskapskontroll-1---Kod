@@ -1,3 +1,8 @@
+# Jag testade först att köra lösningen som en Streamlit-app. Appen kraschade dock när modellerna skulle laddas, trots att
+# beroenden och filer tillslut funkade som förväntat. Min teori är att den generativa modellen blev för tung för Streamlit-miljön att hantera.
+# Jag valde därför att köra modellen lokalt istället.
+
+
 import os
 import warnings
 import pandas as pd
@@ -55,9 +60,9 @@ def run_simple_evaluation(test_questions, retriever, generator, k):
 
     return pd.DataFrame(results)
 
-# -------------------------
+
 # Session state
-# -------------------------
+
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
@@ -67,9 +72,9 @@ if "last_sources" not in st.session_state:
 if "last_contexts" not in st.session_state:
     st.session_state.last_contexts = []
 
-# -------------------------
+
 # Ladda modeller
-# -------------------------
+
 try:
     retriever, generator = load_models()
 except Exception as e:
@@ -77,18 +82,17 @@ except Exception as e:
     st.exception(e)
     st.stop()
 
-# -------------------------
+
 # Sidhuvud
-# -------------------------
+
 st.title("📘 Matematik-RAG i Streamlit")
 st.write(
     "Denna app låter användaren ställa frågor om matematikens kursplan och få svar "
     "baserade på det källmaterial som har indexerats i systemet."
 )
 
-# -------------------------
+
 # Sidebar
-# -------------------------
 with st.sidebar:
     st.header("Inställningar")
 
@@ -116,14 +120,12 @@ with st.sidebar:
         st.session_state.last_contexts = []
         st.rerun()
 
-# -------------------------
+
 # Flikar
-# -------------------------
 tab1, tab2 = st.tabs(["Chatt", "Evaluering"])
 
-# -------------------------
+
 # Flik 1: Chatt
-# -------------------------
 with tab1:
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
@@ -181,9 +183,7 @@ with tab1:
                         {"role": "assistant", "content": error_text}
                     )
 
-# -------------------------
 # Flik 2: Evaluering
-# -------------------------
 with tab2:
     st.subheader("Enkel evaluering av chatboten")
     st.write(

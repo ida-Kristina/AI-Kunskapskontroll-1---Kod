@@ -144,9 +144,39 @@ class SubjRetriever:
         results.sort(key=lambda x: x[0], reverse=True)
         return results[:k]
 
-    def retrieve(self, query, k=5):
+    def retrieve(self, query, k=5, min_score=0.35):
         # Kör sökfunktionen
         results = self.search_chunks(query, k=k)
+
+        # Om inga träffar hittades alls
+        if not results:
+            return {
+                "contexts": [],
+                "sources": [],
+                "scores": [],
+                "best_score": 0.0,
+                "has_support": False
+            }
+
+        # Plockar ut score-värden från träffarna
+        scores = [score for score, _, _ in results]
+
+        # Hämtar bästa träffens score
+        best_score = scores[0]
+
+        # Hjälp vid felsökning
+        print(f"Top scores: {scores[:3]}")
+        print(f"Best score: {best_score}")
+
+        # Stoppar vidare svar om träffen är för svag
+        if best_score < min_score:
+            return {
+                "contexts": [],
+                "sources": [],
+                "scores": scores,
+                "best_score": best_score,
+                "has_support": False
+            }
 
         # Plockar ut bara texten från varje chunk
         contexts = [chunk["text"] for _, _, chunk in results]
@@ -158,7 +188,13 @@ class SubjRetriever:
             for _, _, chunk in results
         ]
 
-        return contexts, sources
+        return {
+            "contexts": contexts,
+            "sources": sources,
+            "scores": scores,
+            "best_score": best_score,
+            "has_support": True
+        }
 
     def mmr(self, query_embedding, candidate_indices, k, lambda_param=0.7):
         # Förbereder listor för urval
