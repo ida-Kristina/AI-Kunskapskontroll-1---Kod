@@ -11,32 +11,45 @@ class SubjGenerator:
 
     def __init__(self):
         """
-        Laddar tokenizer, modell och skapar en textgenerator.
-        Detta görs en gång när objektet skapas.
+        Förbereder generatorn men laddar inte modellen direkt.
+        Detta minskar risken att kerneln kraschar direkt vid start.
         """
 
         # Den språkmodell som ska användas
-        model_name = "AI-Sweden-Models/gpt-sw3-1.3b-instruct"
+        self.model_name = "AI-Sweden-Models/gpt-sw3-1.3b-instruct"
+
+        # Här sparas tokenizer, modell och pipeline senare
+        self.tokenizer = None
+        self.model = None
+        self.generator = None
+
+    def load_model(self):
+        """
+        Laddar tokenizer, modell och pipeline först när de verkligen behövs.
+        """
+        # Om modellen redan är laddad behövs inget mer
+        if self.generator is not None:
+            return
 
         # Laddar tokenizer som omvandlar text till tokens
-        tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
 
         # Laddar själva språkmodellen
-        model = AutoModelForCausalLM.from_pretrained(model_name)
+        self.model = AutoModelForCausalLM.from_pretrained(self.model_name)
 
         # Kollar om det finns en GPU (det gör det inte i mitt fall🙃)
         device = 0 if torch.cuda.is_available() else -1
 
         # Sätter pad token så modellen vet vad den ska använda vid padding
-        model.config.pad_token_id = tokenizer.eos_token_id
+        self.model.config.pad_token_id = self.tokenizer.eos_token_id
 
         # Skapar en pipeline
         self.generator = pipeline(
             "text-generation",
-            model=model,
-            tokenizer=tokenizer,
+            model=self.model,
+            tokenizer=self.tokenizer,
             device=device,
-            pad_token_id=tokenizer.eos_token_id
+            pad_token_id=self.tokenizer.eos_token_id
         )
 
     def generate_response(self, query, retrieval_result):
