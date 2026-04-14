@@ -7,7 +7,11 @@ import faiss
 
 
 class SubjRetriever:
-
+    """
+    Den här klassen ansvarar för hämtningsdelen i RAG-systemet.
+    Den tar en fråga, söker efter relevanta chunkar i indexet och 
+    samlar de texter och källor som bäst matchar frågan.
+    """
     def __init__(
         self,
         index_path="data/matematik_index.faiss",
@@ -146,7 +150,7 @@ class SubjRetriever:
             normalize_embeddings=True
         ).astype("float32")
 
-        # Söker i FAISS-index och hämtar lite fler kandidater än vi slutligen vill ha
+        # Söker i FAISS-index och hämtar lite fler kandidater än vi slutligen vill ha (för att ge oss själva lite marginal)
         distances, indices = self.index.search(query_embedding, k * 4)
 
         # Gör om träffarna till en score-tabell
@@ -275,7 +279,7 @@ class SubjRetriever:
             best_idx = None
 
             for i in candidates:
-                # Om inget är valt än finns ingen diversitets-penalty
+                # Om inget är valt än finns ingen diversitets-penalty (dvs inget "straff" för att vara för lika)
                 if not selected:
                     diversity_penalty = 0.0
                 else:
@@ -301,3 +305,4 @@ class SubjRetriever:
             candidates.remove(best_idx)
 
         return selected
+    

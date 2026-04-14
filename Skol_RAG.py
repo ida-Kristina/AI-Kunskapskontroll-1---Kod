@@ -8,8 +8,8 @@ import warnings
 import pandas as pd
 import streamlit as st
 
-from N5_retriever import SubjRetriever
-from N4_generator import SubjGenerator
+from N4_retriever import SubjRetriever
+from N5_generator import SubjGenerator
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 warnings.filterwarnings("ignore", category=FutureWarning)
