@@ -71,32 +71,16 @@ class SubjRetriever:
         section_filter = None
 
         # Regex för årskurs / åk
+        # 1. Exakta årskurser eller intervall
         year_patterns = [
-            r"\bårskurs\.?\s*([1-9])\b",
-            r"\båk\.?\s*([1-9])\b",
-            r"\bår\.?\s*([1-9])\b",
-            r"\bklass\.?\s*([1-9])\b",
-            r"\b([1-9])\s*[-–]\s*([1-9])\b",
-        ]
-
-        # Nyckelord för olika sektioner
-        section_patterns = {
-            "centralt_innehall": [
-                "centralt", "centrala innehållet", "centralt innehåll", "ämnesinnehåll",
-                "vad ska man göra", "läras", "lära sig", "innehåll", "lärandemål"
-            ],
-            "kunskapskrav": [
-                "kunskapskrav", "betygskriterier", "betyg", "kriterier", "krav",
-                "e-krav", "godkänd", "bedömning", "betygskala", "a-krav",
-                "vad ska man klara", "kunna", "klara"
-            ],
-            "syfte": [
-                "syfte", "syftet", "syftar", "poängen med", "mening", "ändamål",
-                "varför", "mål med ämnet"
+                r"\bårskurs\.?\s*([1-9])\b",
+                r"\båk\.?\s*([1-9])\b",
+                r"\bår\.?\s*([1-9])\b",
+                r"\bklass\.?\s*([1-9])\b",
+                r"\b([1-9])\s*[-–]\s*([1-9])\b",
             ]
-        }
-
-        # Kollar om frågan nämner en årskurs
+        
+        # Kollar om det är enskild åk ("åk 5") eller intervall ("4-6")
         for pattern in year_patterns:
             match = re.search(pattern, query_lower)
             if match:
@@ -106,9 +90,55 @@ class SubjRetriever:
                     year_filter = match.group(1)
                 break
 
+        # 2. Skolstadier, bara om ingen exakt årskurs hittades
+        if year_filter is None:
+            stage_patterns = {
+                r"\blågstadiet\b": "1-3",
+                r"\bmellanstadiet\b": "4-6",
+                r"\bhögstadiet\b": "7-9",
+            }
+
+            for pattern, value in stage_patterns.items():
+                if re.search(pattern, query_lower):
+                    year_filter = value
+                    break
+
+        # Nyckelord för olika sektioner
+        section_patterns = {
+            "centraltinnehall": [
+                "centralt innehåll",
+                "centrala innehållet",
+                "centralt innehall",
+                "ämnesinnehåll",
+                "vad ska man göra",
+                "lära sig",
+                "innehåll",
+                "lärandemål",
+            ],
+            "kunskapskrav": [
+                "kunskapskrav",
+                "betygskriterier",
+                "betyg",
+                "kriterier",
+                "krav",
+                "bedömning",
+                "vad ska man kunna",
+                "vad ska jag kunna",
+                "kunna",
+                "klara",
+            ],
+            "syfte": [
+                "syfte",
+                "syftet",
+                "varför",
+                "ändamål",
+                "mål med ämnet",
+            ]
+        }
+
         # Kollar om frågan verkar handla om en viss sektion
         for section, keywords in section_patterns.items():
-            if any(re.search(rf"\b{re.escape(keyword)}\b", query_lower) for keyword in keywords):
+            if any(keyword in query_lower for keyword in keywords):
                 section_filter = section
                 break
 
