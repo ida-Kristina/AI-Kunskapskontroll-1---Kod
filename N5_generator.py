@@ -14,7 +14,7 @@ class SubjGenerator:
             self,
             model_name = "AI-Sweden-Models/gpt-sw3-356m-instruct",
             max_contexts=3,         # Har laborerat lite med olika värden, på denna och tokens, och tyckte att detta verkade ok avvägning
-            max_new_tokens=80,
+            max_new_tokens=150,
             verbose=False
             ):
         """

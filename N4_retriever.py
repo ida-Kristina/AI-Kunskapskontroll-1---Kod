@@ -237,7 +237,7 @@ class SubjRetriever:
         # Returnerar bara de k bästa träffarna
         return results[:k]
 
-    def retrieve(self, query, k=5, min_score=0.35):
+    def retrieve(self, query, k, min_score):
         # Kör sökfunktionen
         results = self.search_chunks(query, k=k)
 
