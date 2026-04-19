@@ -91,8 +91,8 @@ class SubjRetriever:
                 "vad ska man klara", "kunna", "klara"
             ],
             "syfte": [
-                "syfte", "syftar", "poängen med", "mening", "ändamål",
-                "varför", "mål med ämnet", "undervisningens syfte"
+                "syfte", "syftet", "syftar", "poängen med", "mening", "ändamål",
+                "varför", "mål med ämnet"
             ]
         }
 

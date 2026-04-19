@@ -224,3 +224,5 @@ with tab2:
             except Exception as e:
                 st.error("Det gick inte att köra evalueringen.")
                 st.exception(e)
+
+# Kör: streamlit run Skol_RAG.py
