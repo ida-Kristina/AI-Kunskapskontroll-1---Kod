@@ -3,9 +3,7 @@
 # Jag valde därför att köra modellen lokalt istället.
 
 
-import os
 import streamlit as st
-from pathlib import Path
 
 st.set_page_config(page_title="Matematik-RAG", page_icon="📘", layout="wide")
 
@@ -24,8 +22,8 @@ def load_models(top_k, min_score):
 
 with st.sidebar:
     st.header("Inställningar")
-    top_k = st.slider("Antal träffar (top_k)", min_value=1, max_value=5, value=3, step=1)
-    min_score = st.slider("Minsta score", min_value=0.0, max_value=1.0, value=0.45, step=0.05)
+    top_k = st.slider("Antal hämtade träffar (top_k)", min_value=1, max_value=5, value=3, step=1)
+    min_score = st.slider("Minsta tillåtna score för att inkluderas", min_value=0.0, max_value=1.0, value=0.45, step=0.05)
     show_context = st.checkbox("Visa hämtade källor och kontext", value=True)
 
 question = st.text_area(
@@ -41,7 +39,7 @@ if st.button("Kör modellen", type="primary"):
         try:
             with st.spinner("Laddar modell och hämtar relevanta källor..."):
                 retriever, generator, top_k, min_score = load_models(top_k, min_score)
-                result = retriever.retrieve(question, k=top_k, minscore=min_score)
+                result = retriever.retrieve(question, k=top_k, min_score=min_score)
 
             st.subheader("Svar")
             if not result.get("hassupport", False):
