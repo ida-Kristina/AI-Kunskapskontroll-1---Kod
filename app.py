@@ -81,5 +81,3 @@ if st.button("Kör modellen", type="primary"):
 
 st.markdown("---")
 st.caption("Tips: starta appen med kommandot `streamlit run app.py`")
-
-# Kör: streamlit run Skol_RAG.py
