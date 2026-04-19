@@ -72,11 +72,11 @@ class SubjRetriever:
 
         # Regex för årskurs / åk
         year_patterns = [
-            r"årskurs\s*(1[0-9]|[1-9])",
-            r"åk\s*(1[0-9]|[1-9])",
-            r"år\s*(1[0-9]|[1-9])",
-            r"klass\s*(1[0-9]|[1-9])",
-            r"(1[0-9]|[1-9])\s*-\s*(1[0-9]|[1-9])",
+            r"\bårskurs\.?\s*([1-9])\b",
+            r"\båk\.?\s*([1-9])\b",
+            r"\bår\.?\s*([1-9])\b",
+            r"\bklass\.?\s*([1-9])\b",
+            r"\b([1-9])\s*[-–]\s*([1-9])\b",
         ]
 
         # Nyckelord för olika sektioner

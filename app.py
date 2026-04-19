@@ -42,16 +42,16 @@ if st.button("Kör modellen", type="primary"):
                 result = retriever.retrieve(question, k=top_k, min_score=min_score)
 
             st.subheader("Svar")
-            if not result.get("hassupport", False):
+            if not result.get("has_support", False):
                 st.info("Jag hittar inte detta i källmaterialet.")
             else:
                 with st.spinner("Genererar svar..."):
-                    answer = generator.generateresponse(question, result)
+                    answer = generator.generate_response(question, result)
                 st.success(answer)
 
             if show_context:
                 st.subheader("Retrieval-detaljer")
-                st.write(f"**Best score:** {result.get('bestscore', 0):.4f}")
+                st.write(f"**Best score:** {result.get('best_score', 0):.4f}")
                 scores = result.get("scores", [])
                 if scores:
                     st.write("**Alla scores:**", ", ".join(f"{s:.4f}" for s in scores))
