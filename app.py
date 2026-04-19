@@ -4,225 +4,82 @@
 
 
 import os
-import warnings
-import pandas as pd
 import streamlit as st
+from pathlib import Path
 
-from N4_retriever import SubjRetriever
-from N5_generator import SubjGenerator
-
-os.environ["TOKENIZERS_PARALLELISM"] = "false"
-warnings.filterwarnings("ignore", category=FutureWarning)
-
-st.set_page_config(
-    page_title="Matematik-RAG",
-    page_icon="📘",
-    layout="wide"
-)
-
-@st.cache_resource
-def load_models():
-    retriever = SubjRetriever()
-    generator = SubjGenerator()
-    return retriever, generator
-
-def ask_rag(query, retriever, generator, k):
-    contexts, sources = retriever.retrieve(query, k=k)
-    answer = generator.generate_response(query, contexts, sources)
-    return answer, contexts, sources
-
-def run_simple_evaluation(test_questions, retriever, generator, k):
-    results = []
-
-    for question_data in test_questions:
-        question = question_data["question"]
-        expected_keywords = question_data["expected_keywords"]
-
-        answer, contexts, sources = ask_rag(question, retriever, generator, k)
-
-        answer_lower = answer.lower()
-        matched_keywords = [kw for kw in expected_keywords if kw.lower() in answer_lower]
-        keyword_score = len(matched_keywords) / len(expected_keywords) if expected_keywords else 0
-
-        source_score = 1 if len(sources) > 0 else 0
-        overall_score = round((keyword_score + source_score) / 2, 2)
-
-        results.append({
-            "Fråga": question,
-            "Svar": answer,
-            "Förväntade nyckelord": ", ".join(expected_keywords),
-            "Matchade nyckelord": ", ".join(matched_keywords) if matched_keywords else "-",
-            "Antal källor": len(sources),
-            "Nyckelordspoäng": round(keyword_score, 2),
-            "Källpoäng": source_score,
-            "Total poäng": overall_score
-        })
-
-    return pd.DataFrame(results)
-
-
-# Session state
-
-if "messages" not in st.session_state:
-    st.session_state.messages = []
-
-if "last_sources" not in st.session_state:
-    st.session_state.last_sources = []
-
-if "last_contexts" not in st.session_state:
-    st.session_state.last_contexts = []
-
-
-# Ladda modeller
-
-try:
-    retriever, generator = load_models()
-except Exception as e:
-    st.error("Det gick inte att ladda modeller eller datafiler.")
-    st.exception(e)
-    st.stop()
-
-
-# Sidhuvud
+st.set_page_config(page_title="Matematik-RAG", page_icon="📘", layout="wide")
 
 st.title("📘 Matematik-RAG i Streamlit")
-st.write(
-    "Denna app låter användaren ställa frågor om matematikens kursplan och få svar "
-    "baserade på det källmaterial som har indexerats i systemet."
-)
+st.write("Den här appen låter dig ställa frågor till min RAG-modell med data hämtat från grundskolans kursplaner i matematik.")
 
 
-# Sidebar
+@st.cache_resource
+def load_models(top_k, min_score):
+    from N4_retriever import SubjRetriever
+    from N5_generator import SubjGenerator
+
+    retriever = SubjRetriever(verbose=False)
+    generator = SubjGenerator(verbose=False)
+    return retriever, generator, top_k, min_score
+
 with st.sidebar:
     st.header("Inställningar")
+    top_k = st.slider("Antal träffar (top_k)", min_value=1, max_value=5, value=3, step=1)
+    min_score = st.slider("Minsta score", min_value=0.0, max_value=1.0, value=0.45, step=0.05)
+    show_context = st.checkbox("Visa hämtade källor och kontext", value=True)
 
-    k_value = st.slider(
-        "Antal hämtade träffar",
-        min_value=1,
-        max_value=5,
-        value=4
-    )
+question = st.text_area(
+    "Skriv din fråga här",
+    placeholder="Till exempel: Vad är syftet med matematikundervisning?",
+    height=120,
+)
 
-    show_context = st.checkbox("Visa hämtad kontext", value=False)
-    show_sources = st.checkbox("Visa källor", value=True)
+if st.button("Kör modellen", type="primary"):
+    if not question.strip():
+        st.warning("Skriv en fråga först.")
+    else:
+        try:
+            with st.spinner("Laddar modell och hämtar relevanta källor..."):
+                retriever, generator, top_k, min_score = load_models(top_k, min_score)
+                result = retriever.retrieve(question, k=top_k, minscore=min_score)
 
-    st.markdown("---")
-    st.subheader("Exempelfrågor")
-    st.markdown("- Vad är syftet med matematikundervisning?")
-    st.markdown("- Vad ska man kunna i geometri i årskurs 6?")
-    st.markdown("- Vad är centralt innehåll i algebra för årskurs 4-6?")
-    st.markdown("- Vad krävs för E i matte åk 6?")
+            st.subheader("Svar")
+            if not result.get("hassupport", False):
+                st.info("Jag hittar inte detta i källmaterialet.")
+            else:
+                with st.spinner("Genererar svar..."):
+                    answer = generator.generateresponse(question, result)
+                st.success(answer)
 
-    st.markdown("---")
-    if st.button("Rensa chatten"):
-        st.session_state.messages = []
-        st.session_state.last_sources = []
-        st.session_state.last_contexts = []
-        st.rerun()
+            if show_context:
+                st.subheader("Retrieval-detaljer")
+                st.write(f"**Best score:** {result.get('bestscore', 0):.4f}")
+                scores = result.get("scores", [])
+                if scores:
+                    st.write("**Alla scores:**", ", ".join(f"{s:.4f}" for s in scores))
 
+                sources = result.get("sources", [])
+                contexts = result.get("contexts", [])
 
-# Flikar
-tab1, tab2 = st.tabs(["Chatt", "Evaluering"])
+                for i, (src, ctx) in enumerate(zip(sources, contexts), start=1):
+                    with st.expander(f"Källa {i}"):
+                        st.write(src)
+                        st.write(ctx)
 
+        except ModuleNotFoundError as e:
+            st.error(
+                "Import misslyckades. Kontrollera att du har lagt in `retriever.py` och `generator.py` i samma mapp som appen. "
+                f"Detalj: {e}"
+            )
+        except FileNotFoundError as e:
+            st.error(
+                "Någon datafil saknas. Kontrollera att din `data/`-mapp innehåller index-, embedding- och metadatafilerna. "
+                f"Detalj: {e}"
+            )
+        except Exception as e:
+            st.error(f"Ett oväntat fel uppstod: {e}")
 
-# Flik 1: Chatt
-with tab1:
-    for message in st.session_state.messages:
-        with st.chat_message(message["role"]):
-            st.markdown(message["content"])
-
-    query = st.chat_input("Skriv din fråga här...")
-
-    if query:
-        st.session_state.messages.append({"role": "user", "content": query})
-
-        with st.chat_message("user"):
-            st.markdown(query)
-
-        with st.chat_message("assistant"):
-            with st.spinner("Söker i källmaterialet och genererar svar..."):
-                try:
-                    answer, contexts, sources = ask_rag(
-                        query=query,
-                        retriever=retriever,
-                        generator=generator,
-                        k=k_value
-                    )
-
-                    st.markdown(answer)
-
-                    st.session_state.last_sources = sources
-                    st.session_state.last_contexts = contexts
-
-                    if show_sources:
-                        with st.expander("Källor"):
-                            if sources:
-                                for i, source in enumerate(sources, 1):
-                                    st.markdown(f"**Källa {i}:** {source}")
-                            else:
-                                st.write("Inga källor hittades.")
-
-                    if show_context:
-                        with st.expander("Hämtad kontext"):
-                            if contexts:
-                                for i, ctx in enumerate(contexts, 1):
-                                    st.markdown(f"**Kontext {i}:**")
-                                    st.write(ctx)
-                                    st.markdown("---")
-                            else:
-                                st.write("Ingen kontext hämtades.")
-
-                    st.session_state.messages.append(
-                        {"role": "assistant", "content": answer}
-                    )
-
-                except Exception as e:
-                    error_text = f"Ett fel uppstod: {e}"
-                    st.error(error_text)
-                    st.session_state.messages.append(
-                        {"role": "assistant", "content": error_text}
-                    )
-
-# Flik 2: Evaluering
-with tab2:
-    st.subheader("Enkel evaluering av chatboten")
-    st.write(
-        "Här testas modellen på ett antal fasta frågor. "
-        "Poängen bygger på om svaret innehåller förväntade nyckelord och om källor hittas."
-    )
-
-    test_questions = [
-        {
-            "question": "Vad är syftet med matematikundervisning?",
-            "expected_keywords": ["syfte", "matematik", "undervisning"]
-        },
-        {
-            "question": "Vad krävs för E i matte åk 6?",
-            "expected_keywords": ["E", "årskurs", "kunskapskrav"]
-        },
-        {
-            "question": "Vad är centralt innehåll i algebra för årskurs 4-6?",
-            "expected_keywords": ["algebra", "centralt innehåll", "4-6"]
-        }
-    ]
-
-    if st.button("Kör evaluering"):
-        with st.spinner("Kör tester..."):
-            try:
-                eval_df = run_simple_evaluation(
-                    test_questions=test_questions,
-                    retriever=retriever,
-                    generator=generator,
-                    k=k_value
-                )
-
-                st.dataframe(eval_df, use_container_width=True)
-
-                average_score = round(eval_df["Total poäng"].mean(), 2)
-                st.metric("Medelpoäng", average_score)
-
-            except Exception as e:
-                st.error("Det gick inte att köra evalueringen.")
-                st.exception(e)
+st.markdown("---")
+st.caption("Tips: starta appen med kommandot `streamlit run app.py`")
 
 # Kör: streamlit run Skol_RAG.py
